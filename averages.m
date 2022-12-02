@@ -11,3 +11,21 @@ for c=2:9
    
     av_array{c}=sum;
 end
+
+add=0;
+%plotting the velocities (av_array) and finding averages (av_values)
+for c=2:9
+    hold on
+    t=(0:5);
+    av_values(c)=mean(av_array{1,c});
+    str = sprintf('Average Velocity is %.5f',av_values(c));
+    %legend(str)
+    if(c~=7)
+        plot(av_array{c},'DisplayName',str)
+    end
+   
+    xlabel("Time (ms)");
+    ylabel("Speed (m/s)")
+    legend show
+end
+hold off
